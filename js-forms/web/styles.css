@@ -1,0 +1,37 @@
+.page__header {
+  text-align: center;
+}
+
+.page__form {
+  margin: 24px auto;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.form__field {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.form__input {
+  font-size: 1rem;
+  padding: 4px;
+}
+
+.form__input--lean-start {
+  margin-inline-end: auto;
+}
+
+.form__input-description--invalid {
+  color: red;
+}

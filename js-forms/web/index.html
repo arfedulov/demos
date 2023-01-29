@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2 class="page__header">Register</h2>
+
+    <form id="registerFormStepOne" class="form page__form">
+      <div class="form__field field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="form__input"
+          aria-describedby="emailDescription"
+        />
+        <span
+          id="emailDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Your email address (e.g. abc@example.com)</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          class="form__input"
+          required
+          minlength="8"
+          autocomplete="new-password"
+          aria-describedby="passwordDescription"
+        />
+        <span
+          id="passwordDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Password you will use for logging in</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="fullName">Full name</label>
+        <input
+          id="fullName"
+          type="text"
+          name="fullName"
+          required
+          autocomplete="name"
+          class="form__input"
+          aria-describedby="fullnameDescription"
+        />
+        <span
+          id="fullnameDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <button class="form__input">Submit</button>
+    </form>
+
+    <form id="registerFormStepTwo" class="form page__form">
+      <div class="form__field field">
+        <label for="country">Country</label>
+        <select id="country" name="country" class="form__input">
+          <option value=""></option>
+          <option value="RU">Russia</option>
+          <option value="UA">Ukraine</option>
+          <option value="BY">Belarus</option>
+        </select>
+      </div>
+
+      <div class="form__field field">
+        <label for="city">City</label>
+        <input id="city" type="text" name="city" class="form__input" />
+      </div>
+
+      <div class="form__field field">
+        <label for="address">Address</label>
+        <input id="address" type="text" name="address" class="form__input" />
+      </div>
+
+      <div class="form__field field">
+        <label for="phoneNumber">Phone number</label>
+        <input
+          id="phoneNumber"
+          type="text"
+          name="phoneNumber"
+          inputmode="tel"
+          class="form__input"
+        />
+      </div>
+
+      <button class="form__input">Submit</button>
+    </form>
+
+    <form id="registerFormStepThree" class="form page__form">
+      <div class="form__field field">
+        <label for="dateOfBirth">Date of birth</label>
+        <input
+          id="dateOfBirth"
+          type="date"
+          name="dateOfBirth"
+          class="form__input"
+        />
+      </div>
+
+      <fieldset class="form__field field">
+        <legend>Gender</legend>
+
+        <div class="field form__field">
+          <label for="genderMale">Male</label>
+          <input
+            id="genderMale"
+            type="radio"
+            name="gender"
+            value="male"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field form__field">
+          <label for="genderFemale">Female</label>
+          <input
+            id="genderFemale"
+            type="radio"
+            name="gender"
+            value="female"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+      </fieldset>
+
+      <div class="form__field field">
+        <label for="photo">Photo</label>
+        <input
+          id="photo"
+          type="file"
+          name="photo"
+          accept="image/*"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="shoesColor">Shoes olor</label>
+        <input
+          id="shoesColor"
+          type="color"
+          name="shoesColor"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="happiness">Happiness</label>
+        <input
+          id="happiness"
+          type="range"
+          name="happiness"
+          min="0"
+          max="100"
+          step="1"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="number">Weight</label>
+        <input
+          id="number"
+          type="number"
+          name="weight"
+          min="0"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="about">About</label>
+        <textarea
+          id="about"
+          name="about"
+          cols="30"
+          rows="10"
+          class="form__input"
+        ></textarea>
+      </div>
+
+      <div class="form__field field">
+        <label for="terms">Accept terms and conditions</label>
+        <input
+          class="form__input form__input--lean-start"
+          id="terms"
+          name="termsAndConditions"
+          type="checkbox"
+        />
+      </div>
+
+      <button class="form__input">Submit</button>
+    </form>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
