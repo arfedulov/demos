@@ -10,7 +10,7 @@ const upload = multer({ dest: UPLOAD_DIR });
 const app = express();
 app.use(express.static(WEB_DIR));
 
-app.post("/api/register/:formId", upload.any(), (req, res) => {
+app.post("/api/form/:formId", upload.any(), (req, res) => {
   console.log({
     formId: req.params.formId,
     body: req.body,

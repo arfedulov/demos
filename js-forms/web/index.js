@@ -82,7 +82,7 @@ function onSubmit(event) {
   const formId = event.target.getAttribute("id");
 
   const formData = new FormData(event.target);
-  return fetch(`/api/register/${formId}`, {
+  return fetch(`/api/form/${formId}`, {
     method: "POST",
     body: formData,
   });
