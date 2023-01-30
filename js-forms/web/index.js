@@ -1,5 +1,3 @@
-const $ = (id) => document.getElementById(id);
-
 const rules = {
   // a really dumm example of how a custom validation
   // rulle should look like for the field
@@ -19,21 +17,25 @@ const formIds = [
 ];
 
 formIds.forEach((id) => {
-  const form = $(id);
+  const form = document.getElementById(id);
   form.addEventListener("submit", onSubmit);
   form.addEventListener("blur", (e) => validateOnBlur(e.target), true);
+  form
+    .querySelector("button")
+    .addEventListener("click", customValidateOnSubmit);
 });
 
 function onSubmit(event) {
+  // it's valid if "submit" event is emitted
   event.preventDefault();
 
-  const isValid = customValidateOnSubmit(event);
-  if (!isValid) {
-    return;
-  }
+  const formId = event.target.getAttribute("id");
 
   const formData = new FormData(event.target);
-  console.log(Object.fromEntries(formData.entries()));
+  return fetch(`/api/register/${formId}`, {
+    method: "POST",
+    body: formData,
+  });
 }
 
 function updateCustomValidity(inputElement) {
@@ -51,7 +53,9 @@ function validateOnBlur(inputElement) {
   updateCustomValidity(inputElement);
 
   const isValid = inputElement.validity.valid;
-  const descriptionElement = $(inputElement.getAttribute("aria-describedby"));
+  const descriptionElement = document.getElementById(
+    inputElement.getAttribute("aria-describedby")
+  );
 
   if (!isValid) {
     const message = inputElement.validationMessage;
@@ -74,17 +78,7 @@ function validateOnBlur(inputElement) {
 }
 
 function customValidateOnSubmit(event) {
-  let isValid = true;
-
-  for (const controll of Array.from(event.target)) {
+  for (const controll of Array.from(event.target.form)) {
     validateOnBlur(controll);
-    const valid = event.target.reportValidity();
-    if (!valid) {
-      isValid = false;
-    }
   }
-
-  return isValid;
 }
-
-// TODO: add on-submit validation
