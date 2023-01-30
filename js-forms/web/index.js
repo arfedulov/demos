@@ -19,26 +19,15 @@ const formIds = [
 formIds.forEach((id) => {
   const form = document.getElementById(id);
   form.addEventListener("submit", onSubmit);
-  form.addEventListener("blur", (e) => validateOnBlur(e.target), true);
+  form.addEventListener("blur", (e) => renderControllValidity(e.target), true);
   form
     .querySelector("button")
-    .addEventListener("click", customValidateOnSubmit);
+    .addEventListener("click", (e) => validateForm(e.target.form));
 });
 
-function onSubmit(event) {
-  // it's valid if "submit" event is emitted
-  event.preventDefault();
-
-  const formId = event.target.getAttribute("id");
-
-  const formData = new FormData(event.target);
-  return fetch(`/api/register/${formId}`, {
-    method: "POST",
-    body: formData,
-  });
-}
-
 function updateCustomValidity(inputElement) {
+  // check input value with custom validators
+  // and set input's validity object accordingly
   const rule = rules[inputElement.name];
   if (!rule) {
     return;
@@ -49,9 +38,12 @@ function updateCustomValidity(inputElement) {
   inputElement.setCustomValidity(validity);
 }
 
-function validateOnBlur(inputElement) {
+function renderControllValidity(inputElement) {
   updateCustomValidity(inputElement);
 
+  // Browser handles default validations (like, required, etc..).
+  // Custom validations are done by "updateCustomValidity" function.
+  // Now we need to check the validity and render the error messages.
   const isValid = inputElement.validity.valid;
   const descriptionElement = document.getElementById(
     inputElement.getAttribute("aria-describedby")
@@ -77,8 +69,21 @@ function validateOnBlur(inputElement) {
   }
 }
 
-function customValidateOnSubmit(event) {
-  for (const controll of Array.from(event.target.form)) {
-    validateOnBlur(controll);
+function validateForm(form) {
+  for (const controll of Array.from(form)) {
+    renderControllValidity(controll);
   }
+}
+
+function onSubmit(event) {
+  // it's valid if "submit" event is emitted
+  event.preventDefault();
+
+  const formId = event.target.getAttribute("id");
+
+  const formData = new FormData(event.target);
+  return fetch(`/api/register/${formId}`, {
+    method: "POST",
+    body: formData,
+  });
 }
