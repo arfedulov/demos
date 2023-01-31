@@ -12,7 +12,9 @@
 
     <form id="registrationForm" class="form page__form">
       <div class="form__field field">
-        <label for="email">Электронная почта</label>
+        <label for="email" class="form__label form__label--required"
+          >Электронная почта</label
+        >
         <input
           id="email"
           type="email"
@@ -31,7 +33,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="password">Пароль</label>
+        <label for="password" class="form__label form__label--required"
+          >Пароль</label
+        >
         <input
           id="password"
           type="password"
@@ -51,7 +55,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="fullName">Полное имя</label>
+        <label for="fullName" class="form__label form__label--required"
+          >Полное имя</label
+        >
         <input
           id="fullName"
           type="text"
@@ -70,7 +76,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="country">Страна</label>
+        <label for="country" class="form__label form__label--required"
+          >Страна</label
+        >
         <select
           id="country"
           name="country"
@@ -91,7 +99,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="city">Город</label>
+        <label for="city" class="form__label form__label--required"
+          >Город</label
+        >
         <input
           id="city"
           type="text"
@@ -116,7 +126,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="address">Адрес</label>
+        <label for="address" class="form__label form__label--required"
+          >Адрес</label
+        >
         <input
           id="address"
           type="text"
@@ -135,7 +147,9 @@
       </div>
 
       <div class="form__field field">
-        <label for="phoneNumber">Номер телефона</label>
+        <label for="phoneNumber" class="form__label form__label--required"
+          >Номер телефона</label
+        >
         <input
           id="phoneNumber"
           type="text"
@@ -155,7 +169,7 @@
       </div>
 
       <div class="form__field field">
-        <label for="dateOfBirth">Дата рождения</label>
+        <label for="dateOfBirth" class="form__label">Дата рождения</label>
         <input
           id="dateOfBirth"
           type="date"
@@ -197,7 +211,7 @@
       </fieldset>
 
       <div class="form__field field">
-        <label for="photo">Фото</label>
+        <label for="photo" class="form__label">Фото</label>
         <input
           id="photo"
           type="file"
@@ -214,7 +228,7 @@
       </div>
 
       <div class="form__field field">
-        <label for="about">О себе</label>
+        <label for="about" class="form__label">О себе</label>
         <textarea
           id="about"
           name="about"
@@ -239,7 +253,7 @@
           required
           aria-describedby="termsDescription"
         />
-        <label for="terms"
+        <label for="terms" class="form__label"
           >Принять
           <a href="https://www.wikipedia.org/" target="_blank"
             >условия использования</a

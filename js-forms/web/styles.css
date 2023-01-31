@@ -23,6 +23,12 @@
   flex-wrap: wrap;
 }
 
+.form__label--required::after {
+  color: red;
+  content: "*";
+  display: inline;
+}
+
 .form__field {
   width: 100%;
   margin: 8px 0;
