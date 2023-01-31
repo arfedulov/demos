@@ -1,9 +1,23 @@
+const COUNTRY = {
+  BY: "Беларусь",
+  UA: "Украина",
+  RU: "Россия",
+};
+const PHONE_NUMBER_PREFIX = {
+  BY: "+375",
+  UA: "+380",
+  RU: "+7",
+};
+
 const rules = {
-  // a really dumm example of how a custom validation
-  // rulle should look like for the field
-  password: (formData, value) => {
-    if (formData.get("email").startsWith("a")) {
-      return value.includes("a") ? "" : 'Password must include "a"';
+  phoneNumber: (formData, value) => {
+    const selectedCountry = formData.get("country");
+    const expectPrefix = selectedCountry
+      ? PHONE_NUMBER_PREFIX[selectedCountry]
+      : "";
+
+    if (!value.trim().startsWith(expectPrefix)) {
+      return `Телефонный номер должен начинаться с ${expectPrefix}`;
     }
 
     return "";
