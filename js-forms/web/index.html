@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2 class="page__header">Registration</h2>
+    <h2 class="page__header">Регистрация</h2>
 
     <form id="registrationForm" class="form page__form">
       <div class="form__field field">
-        <label for="email">Email</label>
+        <label for="email">Электронная почта</label>
         <input
           id="email"
           type="email"
@@ -26,12 +26,12 @@
           id="emailDescription"
           aria-live="assertive"
           class="form__input-description"
-          >Your email address (e.g. abc@example.com)</span
+          >Адрес вашей электронной почты (например, abc@example.com)</span
         >
       </div>
 
       <div class="form__field field">
-        <label for="password">Password</label>
+        <label for="password">Пароль</label>
         <input
           id="password"
           type="password"
@@ -46,12 +46,12 @@
           id="passwordDescription"
           aria-live="assertive"
           class="form__input-description"
-          >Password you will use for logging in</span
+          >Пароль, который вы будете использовать для входа</span
         >
       </div>
 
       <div class="form__field field">
-        <label for="fullName">Full name</label>
+        <label for="fullName">Полное имя</label>
         <input
           id="fullName"
           type="text"
@@ -65,11 +65,12 @@
           id="fullnameDescription"
           aria-live="assertive"
           class="form__input-description"
-        ></span>
+          >Например, Иван Иванов</span
+        >
       </div>
 
       <div class="form__field field">
-        <label for="country">Country</label>
+        <label for="country">Страна</label>
         <select
           id="country"
           name="country"
@@ -90,7 +91,7 @@
       </div>
 
       <div class="form__field field">
-        <label for="city">City</label>
+        <label for="city">Город</label>
         <input
           id="city"
           type="text"
@@ -115,7 +116,7 @@
       </div>
 
       <div class="form__field field">
-        <label for="address">Address</label>
+        <label for="address">Адрес</label>
         <input
           id="address"
           type="text"
@@ -129,12 +130,12 @@
           aria-live="assertive"
           class="form__input-description"
         >
-          E.g. 11-я линия Васильевского острова, 48
+          Например, 11-я линия Васильевского острова, 48
         </span>
       </div>
 
       <div class="form__field field">
-        <label for="phoneNumber">Phone number</label>
+        <label for="phoneNumber">Номер телефона</label>
         <input
           id="phoneNumber"
           type="text"
@@ -148,11 +149,13 @@
           id="phoneNumberDescription"
           aria-live="assertive"
           class="form__input-description"
-        ></span>
+          >Номер телефона в международном формате (например, +7 999 000 00
+          00)</span
+        >
       </div>
 
       <div class="form__field field">
-        <label for="dateOfBirth">Date of birth</label>
+        <label for="dateOfBirth">Дата рождения</label>
         <input
           id="dateOfBirth"
           type="date"
@@ -168,10 +171,10 @@
       </div>
 
       <fieldset class="form__field field">
-        <legend>Gender</legend>
+        <legend>Пол</legend>
 
         <div class="field form__field">
-          <label for="genderMale">Male</label>
+          <label for="genderMale">Мужской</label>
           <input
             id="genderMale"
             type="radio"
@@ -182,7 +185,7 @@
         </div>
 
         <div class="field form__field">
-          <label for="genderFemale">Female</label>
+          <label for="genderFemale">Женский</label>
           <input
             id="genderFemale"
             type="radio"
@@ -194,7 +197,7 @@
       </fieldset>
 
       <div class="form__field field">
-        <label for="photo">Photo</label>
+        <label for="photo">Фото</label>
         <input
           id="photo"
           type="file"
@@ -211,7 +214,7 @@
       </div>
 
       <div class="form__field field">
-        <label for="about">About</label>
+        <label for="about">О себе</label>
         <textarea
           id="about"
           name="about"
@@ -227,29 +230,29 @@
         ></span>
       </div>
 
-      <div class="form__field field">
-        <label for="terms"
-          >Accept
-          <a href="https://www.wikipedia.org/" target="_blank"
-            >terms and conditions</a
-          ></label
-        >
+      <div class="form__field field field--row">
         <input
-          class="form__input form__input--lean-start"
+          class="form__input"
           id="terms"
           name="termsAndConditions"
           type="checkbox"
           required
           aria-describedby="termsDescription"
         />
+        <label for="terms"
+          >Принять
+          <a href="https://www.wikipedia.org/" target="_blank"
+            >условия использования</a
+          ></label
+        >
         <span
           id="termsDescription"
           aria-live="assertive"
-          class="form__input-description"
+          class="form__input-description form__input-description--full-width"
         ></span>
       </div>
 
-      <button class="form__input">Submit</button>
+      <button class="form__input">Зарегистрировать</button>
     </form>
 
     <script src="index.js" type="module"></script>
