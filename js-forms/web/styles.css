@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .page__header {
   text-align: center;
 }
@@ -37,6 +41,11 @@
 .form__input {
   font-size: 1rem;
   padding: 4px;
+}
+
+.form__input--invalid {
+  border-color: red;
+  border-style: solid;
 }
 
 .form__input-description--full-width {

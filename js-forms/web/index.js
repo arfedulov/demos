@@ -68,6 +68,7 @@ function renderControllValidity(inputElement) {
 
     descriptionElement.innerText = message;
     descriptionElement.classList.add("form__input-description--invalid");
+    inputElement.classList.add("form__input--invalid");
   } else {
     if (descriptionElement) {
       // restore info description
@@ -76,6 +77,7 @@ function renderControllValidity(inputElement) {
     }
 
     descriptionElement?.classList.remove("form__input-description--invalid");
+    inputElement?.classList.remove("form__input--invalid");
   }
 }
 
