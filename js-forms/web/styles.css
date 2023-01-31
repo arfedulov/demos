@@ -32,6 +32,11 @@
   margin-inline-end: auto;
 }
 
+.form__input-description {
+  display: block;
+  min-height: 18px;
+}
+
 .form__input-description--invalid {
   color: red;
 }

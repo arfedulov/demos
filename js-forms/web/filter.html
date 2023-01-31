@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form id="registerFormStepThree" class="form page__form">
+      <div class="form__field field">
+        <label for="shoesColor">Shoes olor</label>
+        <input
+          id="shoesColor"
+          type="color"
+          name="shoesColor"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="happiness">Happiness</label>
+        <input
+          id="happiness"
+          type="range"
+          name="happiness"
+          min="0"
+          max="100"
+          step="1"
+          class="form__input"
+        />
+      </div>
+
+      <div class="form__field field">
+        <label for="number">Weight</label>
+        <input
+          id="number"
+          type="number"
+          name="weight"
+          min="0"
+          class="form__input"
+        />
+      </div>
+
+      <button class="form__input">Submit</button>
+    </form>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

@@ -10,20 +10,15 @@ const rules = {
   },
 };
 
-const formIds = [
-  "registerFormStepOne",
-  "registerFormStepTwo",
-  "registerFormStepThree",
-];
-
-formIds.forEach((id) => {
-  const form = document.getElementById(id);
+function init() {
+  const form = document.getElementById("registrationForm");
   form.addEventListener("submit", onSubmit);
   form.addEventListener("blur", (e) => renderControllValidity(e.target), true);
   form
     .querySelector("button")
     .addEventListener("click", (e) => validateForm(e.target.form));
-});
+}
+init();
 
 function updateCustomValidity(inputElement) {
   // check input value with custom validators

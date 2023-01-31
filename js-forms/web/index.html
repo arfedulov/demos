@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2 class="page__header">Register</h2>
+    <h2 class="page__header">Registration</h2>
 
-    <form id="registerFormStepOne" class="form page__form">
+    <form id="registrationForm" class="form page__form">
       <div class="form__field field">
         <label for="email">Email</label>
         <input
@@ -68,28 +68,69 @@
         ></span>
       </div>
 
-      <button class="form__input">Submit</button>
-    </form>
-
-    <form id="registerFormStepTwo" class="form page__form">
       <div class="form__field field">
         <label for="country">Country</label>
-        <select id="country" name="country" class="form__input">
+        <select
+          id="country"
+          name="country"
+          class="form__input"
+          required
+          aria-describedby="countryDescription"
+        >
           <option value=""></option>
           <option value="RU">Russia</option>
           <option value="UA">Ukraine</option>
           <option value="BY">Belarus</option>
         </select>
+        <span
+          id="countryDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <div class="form__field field">
         <label for="city">City</label>
-        <input id="city" type="text" name="city" class="form__input" />
+        <input
+          id="city"
+          type="text"
+          name="city"
+          class="form__input"
+          list="cityOptions"
+          required
+          aria-describedby="cityDescription"
+        />
+        <datalist id="cityOptions">
+          <option value="Санкт-Петербург"></option>
+          <option value="Москва"></option>
+          <option value="Киев"></option>
+          <option value="Минск"></option>
+          <option value="Великий Новгород"></option>
+        </datalist>
+        <span
+          id="cityDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <div class="form__field field">
         <label for="address">Address</label>
-        <input id="address" type="text" name="address" class="form__input" />
+        <input
+          id="address"
+          type="text"
+          name="address"
+          aria-describedby="addressDescription"
+          class="form__input"
+          required
+        />
+        <span
+          id="addressDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        >
+          E.g. 11-я линия Васильевского острова, 48
+        </span>
       </div>
 
       <div class="form__field field">
@@ -100,13 +141,16 @@
           name="phoneNumber"
           inputmode="tel"
           class="form__input"
+          required
+          aria-describedby="phoneNumberDescription"
         />
+        <span
+          id="phoneNumberDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
-      <button class="form__input">Submit</button>
-    </form>
-
-    <form id="registerFormStepThree" class="form page__form">
       <div class="form__field field">
         <label for="dateOfBirth">Date of birth</label>
         <input
@@ -114,7 +158,13 @@
           type="date"
           name="dateOfBirth"
           class="form__input"
+          aria-describedby="dateOfBirthDescription"
         />
+        <span
+          id="dateOfBirthDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <fieldset class="form__field field">
@@ -151,41 +201,13 @@
           name="photo"
           accept="image/*"
           class="form__input"
+          aria-describedby="photoDescription"
         />
-      </div>
-
-      <div class="form__field field">
-        <label for="shoesColor">Shoes olor</label>
-        <input
-          id="shoesColor"
-          type="color"
-          name="shoesColor"
-          class="form__input"
-        />
-      </div>
-
-      <div class="form__field field">
-        <label for="happiness">Happiness</label>
-        <input
-          id="happiness"
-          type="range"
-          name="happiness"
-          min="0"
-          max="100"
-          step="1"
-          class="form__input"
-        />
-      </div>
-
-      <div class="form__field field">
-        <label for="number">Weight</label>
-        <input
-          id="number"
-          type="number"
-          name="weight"
-          min="0"
-          class="form__input"
-        />
+        <span
+          id="photoDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <div class="form__field field">
@@ -196,7 +218,13 @@
           cols="30"
           rows="10"
           class="form__input"
+          aria-describedby="aboutDescription"
         ></textarea>
+        <span
+          id="aboutDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <div class="form__field field">
@@ -206,7 +234,14 @@
           id="terms"
           name="termsAndConditions"
           type="checkbox"
+          required
+          aria-describedby="termsDescription"
         />
+        <span
+          id="termsDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <button class="form__input">Submit</button>
