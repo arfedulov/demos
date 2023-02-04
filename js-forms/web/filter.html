@@ -4,48 +4,139 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Поиск</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form id="registerFormStepThree" class="form page__form">
+    <h2 class="page__header">Поиск</h2>
+
+    <form id="filterForm" class="form page__form">
       <div class="form__field field">
-        <label for="shoesColor">Shoes olor</label>
+        <label for="minPrice" class="form__label"
+          >Минимальная цена (&#8381;)</label
+        >
         <input
-          id="shoesColor"
-          type="color"
-          name="shoesColor"
+          id="minPrice"
+          type="number"
+          name="minPrice"
+          min="100"
+          max="100000"
+          value="100"
           class="form__input"
+          aria-describedby="minPriceDescription"
         />
+        <span
+          id="minPriceDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
       </div>
 
       <div class="form__field field">
-        <label for="happiness">Happiness</label>
+        <label for="maxPrice" class="form__label"
+          >Максимальная цена (&#8381;)</label
+        >
         <input
-          id="happiness"
+          id="maxPrice"
+          type="number"
+          name="maxPrice"
+          min="100"
+          max="100000"
+          value="100000"
+          class="form__input"
+          aria-describedby="maxPriceDescription"
+        />
+        <span
+          id="maxPriceDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <fieldset class="form__field field">
+        <legend>Категории</legend>
+
+        <div class="field field--row form__field">
+          <label for="categoryClothes">Одежда</label>
+          <input
+            id="categoryClothes"
+            type="checkbox"
+            name="categories"
+            value="clothes"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field field--row form__field">
+          <label for="categoryShoes">Обувь</label>
+          <input
+            id="categoryShoes"
+            type="checkbox"
+            name="categories"
+            value="shoes"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field field--row form__field">
+          <label for="categoryBooks">Книги</label>
+          <input
+            id="categoryBooks"
+            type="checkbox"
+            name="categories"
+            value="books"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field field--row form__field">
+          <label for="categoryElectronics">Электроника</label>
+          <input
+            id="categoryElectronics"
+            type="checkbox"
+            name="categories"
+            value="electronics"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field field--row form__field">
+          <label for="categoryConstructionMaterials"
+            >Строительные материалы</label
+          >
+          <input
+            id="categoryConstructionMaterials"
+            type="checkbox"
+            name="categories"
+            value="constructionMaterials"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+      </fieldset>
+
+      <div class="form__field field">
+        <label for="color" class="form__label">Цвет</label>
+        <input id="color" type="color" name="color" class="form__input" />
+      </div>
+
+      <div class="form__field field">
+        <label for="maxDeliveryDays" class="form__label"
+          >Максимальное время доставки (от 1 до 5 дней)</label
+        >
+        <input
+          id="maxDeliveryDays"
           type="range"
-          name="happiness"
-          min="0"
-          max="100"
+          name="maxDeliveryDays"
+          min="1"
+          max="5"
           step="1"
           class="form__input"
         />
       </div>
 
-      <div class="form__field field">
-        <label for="number">Weight</label>
-        <input
-          id="number"
-          type="number"
-          name="weight"
-          min="0"
-          class="form__input"
-        />
-      </div>
-
-      <button class="form__input">Submit</button>
+      <button class="form__input">Искать</button>
     </form>
 
-    <script src="index.js" type="module"></script>
+    <script src="filterForm.js" type="module"></script>
   </body>
 </html>
