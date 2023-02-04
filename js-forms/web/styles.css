@@ -48,6 +48,10 @@
   border-style: solid;
 }
 
+.form__input--invalid[type="checkbox"] {
+  outline: 2px solid red;
+}
+
 .form__input-description--full-width {
   width: 100%;
 }
