@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2 class="page__header">Регистрация</h2>
+
+    <form id="registrationForm" class="form page__form">
+      <div class="form__field field">
+        <label for="email" class="form__label form__label--required"
+          >Электронная почта</label
+        >
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="form__input"
+          aria-describedby="emailDescription"
+        />
+        <span
+          id="emailDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Адрес вашей электронной почты (например, abc@example.com)</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="password" class="form__label form__label--required"
+          >Пароль</label
+        >
+        <input
+          id="password"
+          type="password"
+          name="password"
+          class="form__input"
+          required
+          minlength="8"
+          autocomplete="new-password"
+          aria-describedby="passwordDescription"
+        />
+        <span
+          id="passwordDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Пароль, который вы будете использовать для входа</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="fullName" class="form__label form__label--required"
+          >Полное имя</label
+        >
+        <input
+          id="fullName"
+          type="text"
+          name="fullName"
+          required
+          autocomplete="name"
+          class="form__input"
+          aria-describedby="fullnameDescription"
+        />
+        <span
+          id="fullnameDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Например, Иван Иванов</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="country" class="form__label form__label--required"
+          >Страна</label
+        >
+        <select
+          id="country"
+          name="country"
+          class="form__input"
+          required
+          aria-describedby="countryDescription"
+        >
+          <option value=""></option>
+          <option value="RU">Россия</option>
+          <option value="UA">Украина</option>
+          <option value="BY">Беларусь</option>
+        </select>
+        <span
+          id="countryDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <div class="form__field field">
+        <label for="city" class="form__label form__label--required"
+          >Город</label
+        >
+        <input
+          id="city"
+          type="text"
+          name="city"
+          class="form__input"
+          list="cityOptions"
+          required
+          aria-describedby="cityDescription"
+        />
+        <datalist id="cityOptions">
+          <option value="Санкт-Петербург"></option>
+          <option value="Москва"></option>
+          <option value="Киев"></option>
+          <option value="Минск"></option>
+          <option value="Великий Новгород"></option>
+        </datalist>
+        <span
+          id="cityDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <div class="form__field field">
+        <label for="address" class="form__label form__label--required"
+          >Адрес</label
+        >
+        <input
+          id="address"
+          type="text"
+          name="address"
+          aria-describedby="addressDescription"
+          class="form__input"
+          required
+        />
+        <span
+          id="addressDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        >
+          Например, 11-я линия Васильевского острова, 48
+        </span>
+      </div>
+
+      <div class="form__field field">
+        <label for="phoneNumber" class="form__label form__label--required"
+          >Номер телефона</label
+        >
+        <input
+          id="phoneNumber"
+          type="text"
+          name="phoneNumber"
+          inputmode="tel"
+          class="form__input"
+          required
+          aria-describedby="phoneNumberDescription"
+        />
+        <span
+          id="phoneNumberDescription"
+          aria-live="assertive"
+          class="form__input-description"
+          >Номер телефона в международном формате (например, +7 999 000 00
+          00)</span
+        >
+      </div>
+
+      <div class="form__field field">
+        <label for="dateOfBirth" class="form__label">Дата рождения</label>
+        <input
+          id="dateOfBirth"
+          type="date"
+          name="dateOfBirth"
+          class="form__input"
+          aria-describedby="dateOfBirthDescription"
+        />
+        <span
+          id="dateOfBirthDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <fieldset class="form__field field">
+        <legend>Пол</legend>
+
+        <div class="field field--row form__field">
+          <label for="genderMale">Мужской</label>
+          <input
+            id="genderMale"
+            type="radio"
+            name="gender"
+            value="male"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+
+        <div class="field field--row form__field">
+          <label for="genderFemale">Женский</label>
+          <input
+            id="genderFemale"
+            type="radio"
+            name="gender"
+            value="female"
+            class="form__input form__input--lean-start"
+          />
+        </div>
+      </fieldset>
+
+      <div class="form__field field">
+        <label for="photo" class="form__label">Фото</label>
+        <input
+          id="photo"
+          type="file"
+          name="photo"
+          accept="image/*"
+          class="form__input"
+          aria-describedby="photoDescription"
+        />
+        <span
+          id="photoDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <div class="form__field field">
+        <label for="about" class="form__label">О себе</label>
+        <textarea
+          id="about"
+          name="about"
+          cols="30"
+          rows="10"
+          class="form__input"
+          aria-describedby="aboutDescription"
+        ></textarea>
+        <span
+          id="aboutDescription"
+          aria-live="assertive"
+          class="form__input-description"
+        ></span>
+      </div>
+
+      <div class="form__field field field--row">
+        <input
+          class="form__input"
+          id="terms"
+          name="termsAndConditions"
+          type="checkbox"
+          required
+          aria-describedby="termsDescription"
+        />
+        <label for="terms" class="form__label"
+          >Принять
+          <a href="https://www.wikipedia.org/" target="_blank"
+            >условия использования</a
+          ></label
+        >
+        <span
+          id="termsDescription"
+          aria-live="assertive"
+          class="form__input-description form__input-description--full-width"
+        ></span>
+      </div>
+
+      <button class="form__input">Зарегистрировать</button>
+    </form>
+
+    <script src="registrationForm.js" type="module"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
 import { initForm } from "./form.js";
 
-const form = document.getElementById("filterForm");
+const form = document.getElementById("searchForm");
 initForm(form);

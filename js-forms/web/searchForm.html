@@ -10,7 +10,7 @@
   <body>
     <h2 class="page__header">Поиск</h2>
 
-    <form id="filterForm" class="form page__form">
+    <form id="searchForm" class="form page__form">
       <div class="form__field field">
         <label for="minPrice" class="form__label"
           >Минимальная цена (&#8381;)</label
@@ -129,6 +129,7 @@
           name="maxDeliveryDays"
           min="1"
           max="5"
+          value="5"
           step="1"
           class="form__input"
         />
@@ -137,6 +138,6 @@
       <button class="form__input">Искать</button>
     </form>
 
-    <script src="filterForm.js" type="module"></script>
+    <script src="searchForm.js" type="module"></script>
   </body>
 </html>
