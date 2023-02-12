@@ -30,6 +30,10 @@
       :list="dataListId"
       :inputmode="inputmode"
       :accept="accept"
+      :min="min"
+      :max="max"
+      :value="value"
+      :step="step"
     />
     <datalist v-if="hasOptions" :id="dataListId">
       <option v-for="option of options" :key="option" :value="option"></option>
@@ -79,6 +83,14 @@ const props = defineProps({
     type: String,
     default: null,
   },
+  min: {
+    type: Number,
+    default: null,
+  },
+  max: {
+    type: Number,
+    default: null,
+  },
   inputmode: {
     type: String,
     default: null,
@@ -89,6 +101,15 @@ const props = defineProps({
   },
   accept: {
     type: String,
+    default: null,
+  },
+  /* initial value */
+  value: {
+    type: String,
+    default: null,
+  },
+  step: {
+    type: Number,
     default: null,
   },
 });

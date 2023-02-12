@@ -34,7 +34,7 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  const form = document.getElementById("registrationForm");
+  const form = document.getElementById(props.id);
   initForm(form, { rules: props.rules });
 });
 </script>
