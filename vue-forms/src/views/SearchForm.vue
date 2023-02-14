@@ -1,5 +1,10 @@
 <template>
-  <AppForm id="searchForm" label="Поиск" submit-label="Искать">
+  <AppForm
+    action="http://localhost:3000/api/form/search-form"
+    method="POST"
+    label="Поиск"
+    submit-label="Искать"
+  >
     <InputField
       id="minPrice"
       type="number"
@@ -23,6 +28,7 @@
     <CheckboxOptionsField
       id="categories"
       label="Категории"
+      name="categories"
       :options="categoryOptions"
     />
 

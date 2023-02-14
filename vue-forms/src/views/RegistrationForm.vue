@@ -1,9 +1,10 @@
 <template>
   <AppForm
-    id="registrationForm"
     label="Регистрация"
     submit-label="Зарегистрировать"
     :rules="rules"
+    action="http://localhost:3000/api/form/registration-form"
+    method="POST"
   >
     <InputField
       id="email"

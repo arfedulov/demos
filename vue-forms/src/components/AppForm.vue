@@ -2,7 +2,12 @@
   <div>
     <h2 class="page__header">{{ label }}</h2>
 
-    <form :id="id" class="form page__form">
+    <form
+      v-form-validation="{ rules }"
+      :action="action"
+      :method="method"
+      class="form page__form"
+    >
       <slot></slot>
 
       <button class="form__input">{{ submitLabel }}</button>
@@ -11,13 +16,14 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-import { initForm } from "../util/form.js";
-
-const props = defineProps({
-  id: {
+defineProps({
+  action: {
     type: String,
     required: true,
+  },
+  method: {
+    type: String,
+    default: "GET",
   },
   label: {
     type: String,
@@ -28,13 +34,8 @@ const props = defineProps({
     required: true,
   },
   rules: {
-    type: Array,
-    default: () => [],
+    type: Object,
+    default: () => ({}),
   },
-});
-
-onMounted(() => {
-  const form = document.getElementById(props.id);
-  initForm(form, { rules: props.rules });
 });
 </script>
