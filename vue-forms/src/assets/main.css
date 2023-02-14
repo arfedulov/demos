@@ -43,12 +43,12 @@
   padding: 4px;
 }
 
-.form__input--invalid {
+.form__input.invalid {
   border-color: red;
   border-style: solid;
 }
 
-.form__input--invalid[type="checkbox"] {
+.form__input[type="checkbox"].invalid {
   outline: 2px solid red;
 }
 
@@ -61,6 +61,6 @@
   min-height: 18px;
 }
 
-.form__input-description--invalid {
+.form__input-description.invalid {
   color: red;
 }

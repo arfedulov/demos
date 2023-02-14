@@ -45,8 +45,8 @@ export function initForm(formElement, options) {
       }
 
       descriptionElement.innerText = message;
-      descriptionElement.classList.add("form__input-description--invalid");
-      inputElement.classList.add("form__input--invalid");
+      descriptionElement.classList.add("invalid");
+      inputElement.classList.add("invalid");
     } else {
       if (descriptionElement) {
         // restore info description
@@ -54,8 +54,8 @@ export function initForm(formElement, options) {
           descriptionElement.dataset?.infoDescription || "";
       }
 
-      descriptionElement?.classList.remove("form__input-description--invalid");
-      inputElement?.classList.remove("form__input--invalid");
+      descriptionElement?.classList.remove("invalid");
+      inputElement?.classList.remove("invalid");
     }
   }
 
