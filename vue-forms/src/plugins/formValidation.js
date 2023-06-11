@@ -71,10 +71,11 @@ const formValidationDirective = {
       event.preventDefault();
 
       const formData = new FormData(event.target);
-      return fetch(event.target.action, {
-        method: event.target.method,
-        body: formData,
-      });
+      // return fetch(event.target.action, {
+      //   method: event.target.method,
+      //   body: formData,
+      // });
+      alert('Ok');
     }
   },
 };

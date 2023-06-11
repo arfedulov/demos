@@ -72,9 +72,10 @@ export function initForm(formElement, options) {
     const formId = event.target.getAttribute("id");
 
     const formData = new FormData(event.target);
-    return fetch(`/api/form/${formId}`, {
-      method: "POST",
-      body: formData,
-    });
+    // return fetch(`/api/form/${formId}`, {
+    //   method: "POST",
+    //   body: formData,
+    // });
+    alert('Ok')
   }
 }
