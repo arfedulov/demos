@@ -14,3 +14,6 @@ These demos show that Vue helps a lot to reduce the amount of html and it helps 
 
 - [js-forms](/js-forms/)
 - [vue-forms](/vue-forms/)
+
+### Dialogs
+- [dialogs](/dialogs/)

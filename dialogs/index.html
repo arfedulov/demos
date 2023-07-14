@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dialogs demo</title>
+    <link rel="stylesheet" href="dialogs.css">
+</head>
+<body>
+<div class="content">
+    <p>
+        Per the <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element" target="_blank">HTML Living Standard</a>,
+        <q>
+            The dialog element represents a part of an application
+            that a user interacts with to perform a task, for example a dialog box, inspector,
+            or window.
+        </q>
+    </p>
+
+    <div class="actions">
+        <button id="dialogModalBtn" class="button">
+            open modal dialog
+        </button>
+        <dialog id="dialogModal">
+            <form method="dialog">
+                <p>
+                    A modal dialog is a window or overlay that requires the user's immediate attention,
+                    blocking any interaction with the underlying content until the dialog is closed.
+                </p>
+
+                <button>Ok</button>
+            </form>
+        </dialog>
+
+        <button id="dialogBtn" class="button">open dialog</button>
+        <dialog id="dialog">
+            <form method="dialog">
+                <p>
+                    Non-modal dialog does not restrict user interaction with the underlying content.
+                    It allows users to continue interacting with other elements on the web page while
+                    the dialog is open.
+                </p>
+
+                <button>Ok</button>
+            </form>
+        </dialog>
+    </div>
+</div>
+
+<script type="module" src="dialogs.js"></script>
+</body>
+</html>
