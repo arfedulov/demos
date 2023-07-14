@@ -1,0 +1,73 @@
+:root {
+    --color-bg: #04391b;
+    --color-primary: #cb1cba;
+    --color-highlight: #28bd5a;
+
+    --color-ground: #cdcdca;
+    --color-foreground: #3e3dc4;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: monospace;
+    font-size: 24px;
+}
+body {
+    padding: 24px;
+}
+a, a:visited {
+    color: var(--color-highlight);
+}
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.button {
+    background-color: var(--color-ground);
+    padding: 16px 24px;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    color: var(--color-foreground);
+}
+.button:focus-visible, .button:focus {
+    outline: 4px solid var(--color-highlight);
+}
+dialog::backdrop {
+    background-color: #000000;
+    opacity: .6;
+}
+dialog {
+    background-color: var(--color-ground);
+    padding: 16px;
+    max-width: 600px;
+}
+dialog form {
+    border: 2px solid var(--color-primary);
+    padding: 16px;
+}
+dialog button {
+    padding: 16px 24px;
+    min-width: 100px;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-ground);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: bold;
+}
+dialog button:focus,
+dialog button:focus-visible {
+    outline: 4px solid var(--color-highlight);
+}
